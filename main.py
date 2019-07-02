@@ -59,6 +59,16 @@ def attemptLogin():
         password_error1="You are missing your password."
     if (info['password2'] == ''): 
         password_error2="You are missing your password."
+
+
+    if (" " in info['username']):
+        username_error="Make sure there are no spaces in your username."
+    if (" " in info['password1']):    
+        password_error1="Make sure there are no spaces in your password."
+    if (" " in info['password2']): 
+        password_error2="Make sure there are no spaces in your password."
+    if (" " in info['email']):
+        email_error="Make sure there are no spaces in your email"
     # here we are making sure that the password confirmation matches. from here on we can
     # use validation for only password1 since we know that password1 and password2 match.
     if(not info['password1'] == info['password2']):
